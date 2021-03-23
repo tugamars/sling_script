@@ -16,7 +16,7 @@ You can see a preview of how this works [here](https://youtu.be/HwekOJofxxg)
 - The command is configurable
 - Keeps weapons attachaments on "unsling"
 - Keeps weapons ammo on "unsling"
-- Syncronized across-network
+- Syncronized across network
 
 # To-Do
 
