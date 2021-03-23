@@ -47,4 +47,4 @@ The "allowone" stands for if its allowed on the front or not. True = allowed, fa
 # Credits
 This is based of [Scully's Sling Script](https://forum.cfx.re/t/standalone-law-enforcement-sling/1365649)
 
-Indecision#7334 for helping me test and giving a ideas
+Indecision#7334 for helping me test and giving suggestions
