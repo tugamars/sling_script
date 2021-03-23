@@ -1,9 +1,13 @@
-# sling_script
+# Sling Script
  FiveM weapon sling script
 
 # Description
 
 This script allows players to sling their weapons to the back/front.
+
+# Preview
+
+You can see a preview of how this works [here](https://youtu.be/HwekOJofxxg)
 
 # Features
 
