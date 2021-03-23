@@ -56,17 +56,16 @@ function SlingWeapon(weapon,player)
 		end
 		
 		Sling[weapon].Attachements={}
-		
-		print("Weapon comp")
 		for k,v in pairs(Config.Weapons[""..pedWeapon]["attachaments"]) do
 			if(HasPedGotWeaponComponent(player,pedWeapon,v) == 1) then 
 				table.insert(Sling[weapon].Attachements, v)
+				
 			end
 		end
 	
 		
 		Sling[weapon].WeaponObject = CreateObject(objectName, 1.0, 1.0, 1.0, true, true, false)
-		
+				
 		AttachEntityToEntity(Sling[weapon].WeaponObject, player, GetPedBoneIndex(player, 18905), 0.0, 0.0, 0.0, 90.0, 90.0, 0.0, 1, 1, 0, 1, 1, 0)
 		
 		RemoveWeaponFromPed(player, Sling[weapon].Weapon)
