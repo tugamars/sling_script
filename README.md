@@ -21,4 +21,5 @@ This script allows players to sling their weapons to the back/front.
 
 # Credits
 This is based of [Scully's Sling Script](https://forum.cfx.re/t/standalone-law-enforcement-sling/1365649)
+
 Indecision#7334 for helping me test and giving a ideas
