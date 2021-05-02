@@ -1,5 +1,5 @@
 # Sling Script
- FiveM weapon sling script
+ FiveM weapon sling script  
  Join my discord and find other cool scripts [here](https://discord.gg/U5GY4Cwepz)
  
 # Description
