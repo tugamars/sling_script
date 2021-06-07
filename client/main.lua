@@ -9,7 +9,8 @@ Sling[1]={
 		WeaponObject = nil,
 		Weapon = nil,
 		Ammo = nil,
-		Attachements={}
+		Attachements={},
+		AttachementsObjects={}
 	}
 
 Sling[2]={
@@ -17,7 +18,8 @@ Sling[2]={
 		WeaponObject = nil,
 		Weapon = nil,
 		Ammo = nil,
-		Attachements={}
+		Attachements={},
+		AttachementsObjects={}
 	}
 
 RegisterCommand(Config.Command, function(source, args, raw)
@@ -55,16 +57,32 @@ function SlingWeapon(weapon,player)
 			Wait(100)
 		end
 		
+		Sling[weapon].WeaponObject = CreateObject(objectName, 1.0, 1.0, 1.0, true, true, false)
+		
 		Sling[weapon].Attachements={}
 		for k,v in pairs(Config.Weapons[""..pedWeapon]["attachaments"]) do
-			if(HasPedGotWeaponComponent(player,pedWeapon,v) == 1) then 
-				table.insert(Sling[weapon].Attachements, v)
+			if(HasPedGotWeaponComponent(player,pedWeapon,k) == 1) then 
+				table.insert(Sling[weapon].Attachements, k)
+				
+				if(v["objectName"] ~= nil and v["bone"] ~= nil) then
+					local objectName=GetHashKey(v["objectName"])
+					RequestModel(objectName)
+					while not HasModelLoaded(objectName) do
+						Wait(100)
+					end
+					
+					local attach=CreateObject(objectName, 1.0, 1.0, 1.0, true, true, false)
+					AttachEntityToEntity(attach, Sling[weapon].WeaponObject, GetEntityBoneIndexByName(Sling[weapon].WeaponObject, v["bone"]) , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 1, 0, 1, 1, 0);
+					
+					table.insert(Sling[weapon].AttachementsObjects, attach);
+				end
+				
+				
 				
 			end
 		end
 	
 		
-		Sling[weapon].WeaponObject = CreateObject(objectName, 1.0, 1.0, 1.0, true, true, false)
 				
 		AttachEntityToEntity(Sling[weapon].WeaponObject, player, GetPedBoneIndex(player, 18905), 0.0, 0.0, 0.0, 90.0, 90.0, 0.0, 1, 1, 0, 1, 1, 0)
 		
@@ -81,7 +99,7 @@ function SlingWeapon(weapon,player)
 			Wait(100)
 			ClearPedTasks(player)
 			RemoveAnimDict("mp_player_intdrink")
-			AttachEntityToEntity(Sling[weapon].WeaponObject, player, GetPedBoneIndex(player, 24816), 0.0, 0.27, -0.02, 0.0, 320.0, 175.0, 1, 1, 0, 0, 2, 1)
+			AttachEntityToEntity(Sling[weapon].WeaponObject, player, GetPedBoneIndex(player, 24816), 0.13, 0.24, -0.02, 0.0, 320.0, 175.0, 1, 1, 0, 0, 2, 1)
 		else
 			TaskPlayAnim(player, 'mp_player_intdrink', 'loop_bottle', 8.0, -8.0, 400, 49, 0, 0, 0, 0)
 			Wait(400)
@@ -120,6 +138,13 @@ function SlingWeapon(weapon,player)
 		
 		for k,v in pairs(Sling[weapon].Attachements) do 
 			GiveWeaponComponentToPed(player, Sling[weapon].Weapon,v )
+		end
+		
+		for k,v in pairs(Sling[weapon].AttachementsObjects) do 
+			if DoesEntityExist(v) then
+				DeleteObject(v)
+				SetModelAsNoLongerNeeded(v)
+			end
 		end
 		
 		SetCurrentPedWeapon(player, Sling[weapon].Weapon, true)
