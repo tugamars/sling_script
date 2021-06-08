@@ -72,7 +72,7 @@ function SlingWeapon(weapon,player)
 					end
 					
 					local attach=CreateObject(objectName, 1.0, 1.0, 1.0, true, true, false)
-					AttachEntityToEntity(attach, Sling[weapon].WeaponObject, GetEntityBoneIndexByName(Sling[weapon].WeaponObject, v["bone"]) , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 1, 0, 1, 1, 0);
+					AttachEntityToEntity(attach, Sling[weapon].WeaponObject, GetEntityBoneIndexByName(Sling[weapon].WeaponObject, v["bone"]) , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0,1,1);--- 0,1,1) test
 					
 					table.insert(Sling[weapon].AttachementsObjects, attach);
 				end
