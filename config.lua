@@ -103,6 +103,35 @@ Config = {
 				[0xA2D79DDB] = { }
 			}
 		},
+		["1432025498"]={
+			objectName="w_sg_pumpshotgun",
+			allowone=true,
+			attachaments={
+				[0x7BC4CDDC] = { bone = "WAPFlshLasr", objectName = "w_at_ar_flsh" },
+				[0xAC42DF71] = { bone = "WAPSupp", objectName = "w_at_sr_supp" },
+				[0xA2D79DDB] = { },
+				[0xCD940141] = { },
+				[0x9F8A1BF5] = { },
+				[0x4E65B425] = { },
+				[0xE9582927] = { },
+				[0x3BE4465D] = { },
+				[0x420FD713] = {},
+				[0x49B2945] = {},
+				[0x3F3C8181] = {},
+				[0x5F7DCE4D] = { },
+				[0xE3BD9E44] = { },
+				[0x17148F9B] = { },
+				[0x24D22B16] = { },
+				[0xF2BEC6F0] = { },
+				[0x85627D] = { },
+				[0xDC2919C5] = { },
+				[0xE184247B] = { },
+				[0xD8EF9356] = { },
+				[0xEF29BFCA] = { },
+				[0x67AEB165] = { },
+				[0x46411A1D] = {}
+			}
+		},
 		["2017895192"]={
 			objectName="w_sg_sawnoff",
 			allowone=true,
