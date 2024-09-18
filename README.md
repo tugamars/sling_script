@@ -21,8 +21,10 @@ You can see a preview of how this works [here](https://youtu.be/HwekOJofxxg)
 
 # To-Do
 
-- Adding weapons mag and attachaments to the object (currently i can't figure out a good way of doing it due to the coords)
 - Adding keybinds to the script (currently clients can do it on their side using [console keybinds](https://cookbook.fivem.net/2020/01/06/using-the-new-console-key-bindings/)
+
+# Expanding on the config
+You can now use this [website](http://fivem.tugamars.com/sling/) to generate your config from .meta files!
 
 # Config
 
